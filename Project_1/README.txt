@@ -1,0 +1,9 @@
+﻿Topic: Statically analyze Android applications and build a classifier that distinguishes malicious from benign applications
+
+
+        We want to build a static code analyzer for complied Android applications to represent each app as a feature vector. This analyzer obtains a set of labeled malicious and benign Android apps. It will also extract the feature vectors. Then, we train an ML-classifier with the resulting vectors and evaluate the performance of the classifier. This analyzer is relatively inexpensive to implement and very useful for many Tech companies. For example, a static code analyzer helps security analysts to narrow down on threats or weaknesses detected in the early or final stages of development, before the beginning of the software testing phase. More specifically, static code analysts can be set up to automatically find the exact weakness of codes, such as Apps, classes, and methods. Therefore, analysts allow developers to spend less time to find and fix the errors. This directly saves companies’ assets and improves customer experience. To narrow down the scope of this project, I will focus on building a static code analyzer for Android applications.
+After reviewing a few existing tools, I decide to choose Androguard. This tool is free and can be used purely as a library. 
+Here are the reference links: 
+1. https://github.com/androguard/androguard
+2. https://androguard.readthedocs.io/en/latest/.
+To start this project, I will implement the Androguard library on a simple Andriod App that contains no bugs. After that, I will duplicate this App and randomly throw in some errors and run Androguard on all the Apps to extract feature vectors. Then, I will train a Machine Learning classifier with those vectors will be assigned labels. (At this point, I cannot decide which classifiers to be used, but Naive Bayes and Random Forest are good places to start.)
