@@ -6,4 +6,4 @@ After reviewing a few existing tools, I decide to choose Androguard. This tool i
 Here are the reference links: 
 1. https://github.com/androguard/androguard
 2. https://androguard.readthedocs.io/en/latest/.
-To start this project, I will implement the Androguard library on a simple Andriod App that contains no bugs. After that, I will duplicate this App and randomly throw in some errors and run Androguard on all the Apps to extract feature vectors. Then, I will train a Machine Learning classifier with those vectors will be assigned labels. (At this point, I cannot decide which classifiers to be used, but Naive Bayes and Random Forest are good places to start.)
+To start this project, I will implement the Androguard library on a simple Andriod App with Kivy Python Framework that contains no bugs. After that, I will duplicate the codes and randomly throw in some errors and run Androguard on all the Apps to extract feature vectors. Then, I will train a Machine Learning classifier with those vectors will be assigned labels. At this point, I cannot decide which classifiers to be used, but Naive Bayes and Random Forest are good places to start.
