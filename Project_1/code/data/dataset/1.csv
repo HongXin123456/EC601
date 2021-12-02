@@ -1,0 +1,624 @@
+score,code
+1,import random
+1,import pandas
+0,import pandas as
+0,import
+0,import
+1,import panda as pd
+1,def import_data(filename):
+1,"    file = open(filename, ""r"")"
+0,X
+0,X =
+0,X=
+1,    X = []
+1,    y = []
+0,    for line in file
+1,    for line in file:
+1,"        line = line.replace(""\n"","""").split("","")"
+1,"        entity = [float(x) if x!=""?"" else ""NaN"" for x in line]"
+1,        length = len(entity)
+1,        X.append(entity[:length-1])
+1,        y.append(entity[-1])
+1,"return X,y"
+0,    return
+1,"return X, y"
+0,def impute_missing(X)
+1,def impute_missing(X):
+1,    XT = []
+0,    for i in range(len(X[0]))
+1,    for i in range(len(X[0])):
+1,        col = [a[i] for a in X]
+1,        ls = []
+0,        ls =
+0,        for x in col
+1,        for x in col:
+0,            if x != 'NaN'
+1,            if x != 'NaN':
+1,                ls.append(x)
+0,med =
+1,med = median(ls)
+1,        med = median(ls)
+1,        row = [med if x=='NaN' else x for x in col]
+1,        XT.append(row)
+1,    X = [[XT[j][i] for j in range(len(XT))] for i in range(len(XT[0]))] 
+1,    return X
+1,def median(ls):
+1,    ls.sort
+1,    if len(ls)%2 == 0:
+1,        median = (ls[len(ls)//2 - 1] + ls[len(ls)//2]) / 2
+1,    else:
+1,        median = ls[(len(ls)-1) // 2]
+1,    return median
+1,"def discard_missing(X, y):"
+0,    N_X =
+0,    N_y 
+1,    for i in range(len(X)):
+1,        if 'NaN' not in X[i]:
+1,            N_X.append(X[i])
+1,            N_y.append(y[i])
+1,"    return N_X, N_y"
+1,"def shuffle_data(X, y):"
+1,"    data = list(zip(X, y))"
+1,    random.shuffle(data)
+1,"    X, y = zip(*data)"
+1,"    return X, y"
+1,def compute_std(X):
+1,    std = []
+1,    for i in range(len(X[1])):
+1,        col = [row[i] for row in X]
+1,        std.append(standiv(col))
+1,    return std
+1,def standiv(ls):
+1,    diff = []
+1,    for x in ls:
+1,        diff.append(( x - avg_num(ls) ) ** 2)
+1,    return (compute_sum(diff)/(len(ls)-1)) ** (1/2)
+1,def compute_sum(ls):
+1,    sum = 0.0
+1,    for x in ls:
+1,        sum = sum + x
+1,    return sum
+1,def avg_num(ls):
+1,    return compute_sum(ls)/len(ls)
+1,"def remove_outlier(X, y):"
+1,    std = compute_std(X) #std list
+1,    index = []
+1,    X_new = []
+1,    y_new = []
+1,    for i in range(len(X[1])):
+1,        col = [row[i] for row in X]
+1,        mean = avg_num(col)
+1,        for ci in range(len(col)): 
+1,            if abs(col[ci] - mean) > 2 * std[i]:
+1,                index.append(ci)
+1,    for x in range(len(X)):
+1,        if x not in index:
+1,            X_new.append(X[x])
+1,            y_new.append(y[x])
+1,"    return X_new, y_new"
+1,def standard_data(X):
+1,    std = compute_std(X) #c
+1,    N_X = [] #r
+1,    for i in range(len(X[0])):  #time = O(c(r+r) + cr) = O(cr)
+1,        N_X.append([])
+1,        col = [row[i] for row in X] #r
+1,        mean = avg_num(col) #cr
+1,        for x in col: #r
+1,            N_X[i].append( (x - mean)/std )
+1,    X = [[N_X[j][xi] for j in range(len(N_X))] for xi in range(len(N_X[0]))]  #cr #0
+1,    return X
+1,def import_data_Q4(filename):
+1,"    file = open(filename, ""r"")"
+1,    next(file)
+1,    X = []
+1,    y = []
+1,    for line in file:
+1,"        line = line.replace(""\n"","""").split("","")"
+1,"        if line[5] == ""female"":"
+1,            gender = 0
+1,"        elif line[5] == ""male"":"
+1,            gender = 1
+1,        else: 
+1,            gender = line[5]
+1,"        if line[-1] == ""C"":"
+1,            embarked = 0
+1,"        elif line [-1] == ""Q"":"
+1,            embarked = 1
+1,"        elif line [-1] == ""S"":"
+1,            embarked = 2
+1,        else: 
+1,            embarked = line[-1]
+1,"        X.append([gender, embarked, line[0], line[2], line[6], line[7], line[8], line[10]])"
+1,        y.append(line[1])
+1,"    return X, y"
+1,"def train_test_split(X: list, y: list, t_f: float):"
+1,    import random
+1,"    data = list(zip(X, y))"
+1,    random.shuffle(data)
+1,"    X, y = zip(*data)"
+1,    split = int(len(X) * t_f)
+1,    X_train = X[split:]
+1,    X_test = X[:split]
+1,    y_train = y[split:]
+1,    y_test = y[:split]
+1,"    return X_train, y_train, X_test, y_test"
+1,"def train_test_CV_split(X: list, y: list, t_f:float, cv_f:float):"
+1,"    X_train, y_train, X_test, y_test = train_test_split(X, y, t_f)"
+1,"    X_train, y_train, X_cv, y_cv = train_test_split(X_train,y_train,cv_f)"
+1,"    return X_train, y_train, X_test, y_test, X_cv, y_cv"
+1,if __name__ == '__main__':
+1,    filename = 'train.csv'    
+1,from __future__ import absolute_import
+1,import random
+1,import matplotlib.pyplot as plt
+1,import numpy as np
+1,import scipy.io
+1,import scipy.misc
+1,from scipy.spatial import distance
+1,"def plot_data(samples, centroids, clusters=None):"
+1,"    colors = ['blue', 'green', 'gold']"
+1,    assert centroids is not None
+1,    if clusters is not None:
+1,        sub_samples = []
+1,        for cluster_id in range(centroids[0].shape[0]):
+1,            sub_samples.append(np.array([samples[i] for i in range(samples.shape[0]) if clusters[i] == cluster_id]))
+1,    else:
+1,        sub_samples = [samples]
+1,"    plt.figure(figsize=(7, 5))"
+1,    for clustered_samples in sub_samples:
+1,        cluster_id = sub_samples.index(clustered_samples)
+1,"        plt.plot(clustered_samples[:, 0], clustered_samples[:, 1], 'o', color=colors[cluster_id], alpha=0.75,"
+1,                 label='Data Points: Cluster %d' % cluster_id)
+1,"    plt.xlabel('x1', fontsize=14)"
+1,"    plt.ylabel('x2', fontsize=14)"
+1,"    plt.title('Plot of X Points', fontsize=16)"
+1,    plt.grid(True)
+1,    # Drawing a history of centroid movement
+1,"    tempx, tempy = [], []"
+1,    for mycentroid in centroids:
+1,"        tempx.append(mycentroid[:, 0])"
+1,"        tempy.append(mycentroid[:, 1])"
+1,    for cluster_id in range(len(tempx[0])):
+1,"        plt.plot(tempx, tempy, 'rx--', markersize=8)"
+1,"    plt.legend(loc=4, framealpha=0.5)"
+1,    plt.show(block=True)
+1,"def get_centroids(samples, clusters):"
+1,    unique_cluster = []
+1,    centroid_list = []
+1,    i = 0
+1,    count = 0
+1,    for h in clusters:
+1,        if h not in unique_cluster:
+1,            unique_cluster.append(h)
+1,    while i < len(unique_cluster):
+1,        num = []
+1,        for j in range(len(clusters)):
+1,            if clusters[j] == unique_cluster[i]:
+1,                num.append(samples[j])
+1,                count = count + 1
+1,        centroid_list.append(avg(num))
+1,        count = 0
+1,        i = i + 1
+1,    return np.array(centroid_list)
+1,def avg(coordinate):
+1,    n = len(coordinate)
+1,    a = sum([p[0] for p in coordinate]) / n
+1,    b = sum([p[1] for p in coordinate]) / n
+1,"    return [a, b]"
+1,"def find_closest_centroids(samples, centroids):"
+1,    clusters = []
+1,    for h in samples:
+1,        min_dis = float('inf')
+1,        index = 0
+1,        for i in range(len(centroids.tolist())):
+1,"            num = calculation1(h, centroids[i])"
+1,            if num < min_dis:
+1,                min_dis = num
+1,                index = i
+1,        clusters.append(index)
+1,    return clusters
+1,"def calculation1(a, b):"
+1,"    return sum([(a - b) ** 2 for a, b in zip(a, b)]) ** 0.5"
+1,"def run_k_means(samples, initial_centroids, n_iter):"
+1,    centroid_history = []
+1,    current_centroids = initial_centroids
+1,    clusters = []
+1,    for iteration in range(n_iter):
+1,        centroid_history.append(current_centroids)
+1,"        print(""Iteration %d, Finding centroids for all samples..."" % iteration)"
+1,"        clusters = find_closest_centroids(samples, current_centroids)"
+1,"        print(""Recompute centroids..."")"
+1,"        current_centroids = get_centroids(samples, clusters)"
+1,    # print(current_centroids)
+1,"    return clusters, centroid_history"
+1,"def choose_random_centroids(samples, K):"
+1,    np.random.shuffle(samples)
+1,"    centroids = samples[:K,:]"
+1,    return centroids
+1,"def k_means(samples, choose_centroid):"
+1,    K = choose_centroid
+1,    rc = random.choice(samples)
+1,    centroids = [rc]
+1,    while len(centroids) < K:
+1,        probability = []
+1,        for point in samples:
+1,"            probability.append((distance.euclidean(rc, point))**2)"
+1,        probability = [p/sum(probability) for p in probability]
+1,"        rc = random.choices(samples, probability)[0]"
+1,        centroids.append(rc)
+1,    return centroids
+1,def main():
+1,    datafile = 'kmeans-data.mat'
+1,    mat = scipy.io.loadmat(datafile)
+1,    samples = mat['X']
+1,"    initial_centroids = np.array([[3, 3], [6, 2], [8, 5]])"
+1,"    initial_centroids = np.array(choose_random_centroids(samples,3))"
+1,"    initial_centroids = np.array(k_means(samples,3))"
+1,"    plot_data(samples, [initial_centroids])"
+1,"    clusters = find_closest_centroids(samples, initial_centroids)"
+1,"    plot_data(samples, [initial_centroids], clusters)"
+1,"    clusters, centroid_history = run_k_means(samples, initial_centroids, n_iter=10)"
+1,"    plot_data(samples, centroid_history, clusters)"
+1,    for x in range(3):
+1,"        clusters, centroid_history = run_k_means(samples, choose_random_centroids(samples, K=3), n_iter=10)"
+1,"        plot_data(samples, centroid_history, clusters)"
+1,if __name__ == '__main__':
+1,    random.seed(7)
+1,    main()
+1,from __future__ import absolute_import
+1,import random
+1,import matplotlib.pyplot as plt
+1,import numpy as np
+1,import scipy.io
+1,import scipy.misc
+1,from scipy.spatial import distance
+1,"def plot_data(samples, centroids, clusters=None):"
+1,"    colors = ['blue', 'green', 'gold']"
+1,    assert centroids is not None
+1,    if clusters is not None:
+1,        sub_samples = []
+1,        for cluster_id in range(centroids[0].shape[0]):
+1,            sub_samples.append(np.array([samples[i] for i in range(samples.shape[0]) if clusters[i] == cluster_id]))
+1,    else:
+1,        sub_samples = [samples]
+1,"    plt.figure(figsize=(7, 5))"
+1,    for clustered_samples in sub_samples:
+1,        cluster_id = sub_samples.index(clustered_samples)
+1,"        plt.plot(clustered_samples[:, 0], clustered_samples[:, 1], 'o', color=colors[cluster_id], alpha=0.75,"
+1,                 label='Data Points: Cluster %d' % cluster_id)
+1,"    plt.xlabel('x1', fontsize=14)"
+1,"    plt.ylabel('x2', fontsize=14)"
+1,"    plt.title('Plot of X Points', fontsize=16)"
+1,    plt.grid(True)
+1,    # Drawing a history of centroid movement
+1,"    tempx, tempy = [], []"
+1,    for mycentroid in centroids:
+1,"        tempx.append(mycentroid[:, 0])"
+1,"        tempy.append(mycentroid[:, 1])"
+1,    for cluster_id in range(len(tempx[0])):
+1,"        plt.plot(tempx, tempy, 'rx--', markersize=8)"
+1,"    plt.legend(loc=4, framealpha=0.5)"
+1,    plt.show(block=True)
+1,"def get_centroids(samples, clusters):"
+1,    unique_cluster = []
+1,    centroid_list = []
+1,    i = 0
+1,    count = 0
+1,    for h in clusters:
+1,        if h not in unique_cluster:
+1,            unique_cluster.append(h)
+1,    while i < len(unique_cluster):
+1,        num = []
+1,        for j in range(len(clusters)):
+1,            if clusters[j] == unique_cluster[i]:
+1,                num.append(samples[j])
+1,                count = count + 1
+1,        centroid_list.append(avg(num))
+1,        count = 0
+1,        i = i + 1
+1,    return np.array(centroid_list)
+1,def avg(coordinate):
+1,    n = len(coordinate)
+1,    a = sum([p[0] for p in coordinate]) / n
+1,    b = sum([p[1] for p in coordinate]) / n
+1,"    return [a, b]"
+1,"def find_closest_centroids(samples, centroids):"
+1,    clusters = []
+1,    for h in samples:
+1,        min_dis = float('inf')
+1,        index = 0
+1,        for i in range(len(centroids.tolist())):
+1,"            num = dist1(h, centroids[i])"
+1,            if num < min_dis:
+1,                min_dis = num
+1,                index = i
+1,        clusters.append(index)
+1,    return clusters
+1,"def dist1(a, b):"
+1,"    return sum([(a - b) ** 2 for a, b in zip(a, b)]) ** 0.5"
+1,"def run_k_means(samples, initial_centroids, n_iter):"
+1,    centroid_history = []
+1,    current_centroids = initial_centroids
+1,    clusters = []
+1,    for iteration in range(n_iter):
+1,        centroid_history.append(current_centroids)
+1,"        print(""Iteration %d, Finding centroids for all samples..."" % iteration)"
+1,"        clusters = find_closest_centroids(samples, current_centroids)"
+1,"        print(""Recompute centroids..."")"
+1,"        current_centroids = get_centroids(samples, clusters)"
+1,    # print(current_centroids)
+1,"    return clusters, centroid_history"
+1,"def choose_random_centroids(samples, K):"
+1,    np.random.shuffle(samples)
+1,"    centroids = samples[:K,:]"
+1,    return centroids
+1,"def k_means(samples, choose_centroid):"
+1,    K = choose_centroid
+1,    rc = random.choice(samples)
+1,    centroids = [rc]
+1,    while len(centroids) < K:
+1,        probability = []
+1,        for point in samples:
+1,"            probability.append((distance.euclidean(rc, point))**2)"
+1,        probability = [p/sum(probability) for p in probability]
+1,"        rc = random.choices(samples, probability)[0]"
+1,        centroids.append(rc)
+1,    return centroids
+1,#2(a)k_mean-------------------------------------------
+1,import pandas as pd
+1,import matplotlib.pyplot as plt
+1,from mpl_toolkits.mplot3d import Axes3D
+1,from sklearn.preprocessing import StandardScaler
+1,from sklearn.cluster import KMeans
+1,# def money(number):
+1,#     number = number.strip('$')
+1,#     try:
+1,"#         [num,dec]=number.rsplit('.')"
+1,#         dec = int(dec)
+1,#         aside = str(dec)
+1,#         x = int('1'+'0'*len(aside))
+1,#         price = float(dec)/x
+1,"#         num = num.replace(',','')"
+1,#         num = int(num)
+1,#         price = num + price
+1,#     except:
+1,#         price = int(number)
+1,#     return price
+1,"#input_file = pd.read_csv('listings.csv', converters={'price': lambda s: money(s)})"
+1,input_file = pd.read_csv('listings.csv')
+1,"features = ['latitude','longitude']"
+1,data = input_file[features]
+1,scaler = StandardScaler()
+1,data_scaler = scaler.fit_transform(data)
+1,kmean = KMeans(n_clusters=5)
+1,kmean.fit(data_scaler)
+1,centroids = kmean.predict(data_scaler)
+1,import pandas as pd
+1,def money(number):
+1,    number = number.strip('$')
+1,    try:
+1,"        [num,dec]=number.rsplit('.')"
+1,        dec = int(dec)
+1,        aside = str(dec)
+1,        x = int('1'+'0'*len(aside))
+1,        price = float(dec)/x
+1,"        num = num.replace(',','')"
+1,        num = int(num)
+1,        price = num + price
+1,    except:
+1,        price = int(number)
+1,    return price
+1,"input_data = pd.read_csv('listings.csv', converters={'price': lambda s: money(s)})"
+1,"features = ['latitude','longitude','price']"
+1,data = input_data[features]
+1,from sklearn.preprocessing import StandardScaler
+1,scaler = StandardScaler()
+1,data_scaler = scaler.fit_transform(data)
+1,from sklearn import mixture
+1,gmm = mixture.GaussianMixture(n_components=5).fit(data_scaler)
+1,labels = gmm.predict(data_scaler)
+1,import matplotlib.pyplot as plt
+1,from mpl_toolkits.mplot3d import Axes3D
+1,import pandas as pd
+1,def money(number):
+1,    number = number.strip('$')
+1,    try:
+1,"        [num,dec]=number.rsplit('.')"
+1,        dec = int(dec)
+1,        aside = str(dec)
+1,        x = int('1'+'0'*len(aside))
+1,        price = float(dec)/x
+1,"        num = num.replace(',','')"
+1,        num = int(num)
+1,        price = num + price
+1,    except:
+1,        price = int(number)
+1,    return price
+1,"input_data = pd.read_csv('listings.csv', converters={'price': lambda s: money(s)})"
+1,"#features = ['latitude','longitude']"
+1,"features = ['latitude','longitude','price']"
+1,data = input_data[features].sample(frac=0.5)
+1,from sklearn.preprocessing import StandardScaler
+1,scaler = StandardScaler()
+1,data_scaler = scaler.fit_transform(data)
+1,"from scipy.cluster.hierarchy import dendrogram, linkage, fcluster"
+1,"linkage = linkage(data_scaler,method='average')"
+1,"p=fcluster(linkage,5,criterion='maxclust')"
+1,#4----------------------------------------------
+1,from __future__ import absolute_import
+1,import random
+1,import pandas as pd
+1,import matplotlib.pyplot as plt
+1,import numpy as np
+1,import scipy.io
+1,import scipy.misc
+1,from scipy.spatial import distance
+1,"def plot_data(samples, centroids, clusters=None):"
+1,"    """""""
+1,    Plot samples and color it according to cluster centroid.
+1,    :param samples: samples that need to be plotted.
+1,    :param centroids: cluster centroids.
+1,    :param clusters: list of clusters corresponding to each sample.
+1,"    """""""
+1,"    colors = ['blue', 'green', 'gold']"
+1,    assert centroids is not None
+1,    if clusters is not None:
+1,        sub_samples = []
+1,        for cluster_id in range(centroids[0].shape[0]):
+1,            sub_samples.append(np.array([samples[i] for i in range(samples.shape[0]) if clusters[i] == cluster_id]))
+1,    else:
+1,        sub_samples = [samples]
+1,"    plt.figure(figsize=(7, 5))"
+1,    for clustered_samples in sub_samples:
+1,        cluster_id = sub_samples.index(clustered_samples)
+1,"        plt.plot(clustered_samples[:, 0], clustered_samples[:, 1], 'o', color=colors[cluster_id], alpha=0.75,"
+1,                 label='Data Points: Cluster %d' % cluster_id)
+1,"    plt.xlabel('x1', fontsize=14)"
+1,"    plt.ylabel('x2', fontsize=14)"
+1,"    plt.title('Plot of X Points', fontsize=16)"
+1,    plt.grid(True)
+1,    # Drawing a history of centroid movement
+1,"    tempx, tempy = [], []"
+1,    for mycentroid in centroids:
+1,"        tempx.append(mycentroid[:, 0])"
+1,"        tempy.append(mycentroid[:, 1])"
+1,    for cluster_id in range(len(tempx[0])):
+1,"        plt.plot(tempx, tempy, 'rx--', markersize=8)"
+1,"    plt.legend(loc=4, framealpha=0.5)"
+1,    plt.show(block=True)
+1,"def get_centroids(samples, clusters):"
+1,"    """""""
+1,    Find the centroid given the samples and their cluster.
+1,    :param samples: samples.
+1,    :param clusters: list of clusters corresponding to each sample.
+1,    :return: an array of centroids.
+1,"    """""""
+1,    unique_cluster = []
+1,    centroid_list = []
+1,    i = 0
+1,    count = 0
+1,    for h in clusters:
+1,        if h not in unique_cluster:
+1,            unique_cluster.append(h)
+1,    while i < len(unique_cluster):
+1,        num = []
+1,        for j in range(len(clusters)):
+1,            if clusters[j] == unique_cluster[i]:
+1,                num.append(samples[j])
+1,                count = count + 1
+1,        centroid_list.append(avg(num))
+1,        count = 0
+1,        i = i + 1
+1,    return np.array(centroid_list)
+1,def avg(coordinate):
+1,    n = len(coordinate)
+1,    a = sum([p[0] for p in coordinate]) / n
+1,    b = sum([p[1] for p in coordinate]) / n
+1,"    return [a, b]"
+1,"def find_closest_centroids(samples, centroids):"
+1,    clusters = []
+1,    for h in samples:
+1,        min_dis = float('inf')
+1,        index = 0
+1,        for i in range(len(centroids.tolist())):
+1,"            num = dist1(h, centroids[i])"
+1,            if num < min_dis:
+1,                min_dis = num
+1,                index = i
+1,        clusters.append(index)
+1,    return clusters
+1,"def dist1(a, b):"
+1,"    return sum([(a - b) ** 2 for a, b in zip(a, b)]) ** 0.5"
+1,"def run_k_means(samples, initial_centroids, n_iter):"
+1,"    """""""
+1,    Run K-means algorithm. The number of clusters 'K' is defined by the size of initial_centroids
+1,    :param samples: samples.
+1,    :param initial_centroids: a list of initial centroids.
+1,    :param n_iter: number of iterations.
+1,    :return: a pair of cluster assignment and history of centroids.
+1,"    """""""
+1,    centroid_history = []
+1,    current_centroids = initial_centroids
+1,    clusters = []
+1,    for iteration in range(n_iter):
+1,        centroid_history.append(current_centroids)
+1,"        print(""Iteration %d, Finding centroids for all samples..."" % iteration)"
+1,"        clusters = find_closest_centroids(samples, current_centroids)"
+1,"        print(""Recompute centroids..."")"
+1,"        current_centroids = get_centroids(samples, clusters)"
+1,    # print(current_centroids)
+1,"    return clusters, centroid_history"
+1,"def choose_random_centroids(samples, K):"
+1,"    """""""
+1,    Randomly choose K centroids from samples.
+1,    :param samples: samples.
+1,    :param K: K as in K-means. Number of clusters.
+1,    :return: an array of centroids.
+1,"    """""""
+1,    np.random.shuffle(samples)
+1,"    centroids = samples[:K,:]"
+1,    return centroids
+1,"def k_means(samples, choose_centroid):"
+1,    K = choose_centroid
+1,    rc = random.choice(samples)
+1,    centroids = [rc]
+1,    while len(centroids) < K:
+1,        probability = []
+1,        for point in samples:
+1,"            probability.append((distance.euclidean(rc, point))**2)"
+1,        probability = [p/sum(probability) for p in probability]
+1,"        rc = random.choices(samples, probability)[0]"
+1,        centroids.append(rc)
+1,    return centroids
+1,    
+1,    
+1,    
+1,from cv2 import cv2
+1,"img = cv2.imread(""test.jpg"")"
+1,# location
+1,row = len(img) 
+1,col = len(img[0])
+1,"temp = np.zeros([row*col,5])"
+1,for i in range(row):
+1,    for j in range(col):
+1,        index = i * col + j
+1,        temp[index][0] = i
+1,        temp[index][1] = j
+1,        temp[index][2] = img[i][j][0]
+1,        temp[index][3] = img[i][j][1]
+1,        temp[index][4] = img[i][j][2]
+1,"df = pd.DataFrame(temp,columns=['x','y','r','g','b'])"
+1,# Kmeans
+1,"features = ['r','g','b']"
+1,"initial_centers = choose_random_centroids((df[features].values),2)"
+1,"clustering = run_k_means((df[features].values), initial_centers ,7)[0]"
+1,"assignments = find_closest_centroids((df[features].values),initial_centers)"
+1,"new_centers = get_centroids((df[features].values),assignments)"
+1,df['assignments'] = assignments
+1,# calculate the mean
+1,r_mean = df.groupby(['assignments'])['r'].mean()
+1,g_mean = df.groupby(['assignments'])['g'].mean()
+1,b_mean = df.groupby(['assignments'])['b'].mean()
+1,# replace the pixels with the value of their cluster center.
+1,df2 = np.array(df)
+1,for i in range(row*col):    
+1,    if df2[i][5] == 1:
+1,        df2[i][2]=r_mean[1]
+1,        df2[i][3]=g_mean[1]
+1,        df2[i][4]=b_mean[1]
+1,    else :
+1,        df2[i][2]=r_mean[0]
+1,        df2[i][3]=g_mean[0]
+1,        df2[i][4]=b_mean[0]
+1,"df3 = pd.DataFrame(df2,columns=['x','y','r','g','b','assign'])"
+1,# making picture
+1,pict = np.zeros(shape=img.shape)
+1,"for index, row in df3.iterrows():"
+1,    i = int(row['x'])
+1,    j = int(row['y'])
+1,    r = row['r']
+1,    g = row['g']
+1,    b = row['b']
+1,"    pict[i][j] = [r,g,b]"
+1,# write the picture
+1,"cv2.imwrite('Picture.png',pict)"
