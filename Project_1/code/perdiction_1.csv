@@ -1,0 +1,45 @@
+model_name,predicted_score,code,true_score,accuracy
+Log_Reg,0,import,0,37.5
+Log_Reg,0,      import,0,37.5
+Log_Reg,1,import pandas,1,37.5
+Log_Reg,1,mport numpy,0,37.5
+Log_Reg,0,import csv,1,37.5
+Log_Reg,0,if a ==b:,1,37.5
+Log_Reg,0,else:,1,37.5
+Log_Reg,0,ellif b>a:,1,37.5
+model_name,predicted_score,code,true_score,accuracy
+Nav_Bay,0,import,0,37.5
+Nav_Bay,0,      import,0,37.5
+Nav_Bay,1,import pandas,1,37.5
+Nav_Bay,1,mport numpy,0,37.5
+Nav_Bay,0,import csv,1,37.5
+Nav_Bay,0,if a ==b:,1,37.5
+Nav_Bay,0,else:,1,37.5
+Nav_Bay,0,ellif b>a:,1,37.5
+model_name,predicted_score,code,true_score,accuracy
+KNN,0,import,0,37.5
+KNN,0,      import,0,37.5
+KNN,1,import pandas,1,37.5
+KNN,1,mport numpy,0,37.5
+KNN,0,import csv,1,37.5
+KNN,0,if a ==b:,1,37.5
+KNN,0,else:,1,37.5
+KNN,0,ellif b>a:,1,37.5
+model_name,predicted_score,code,true_score,accuracy
+SVM,0,import,0,50.0
+SVM,0,      import,0,50.0
+SVM,1,import pandas,1,50.0
+SVM,0,mport numpy,0,50.0
+SVM,0,import csv,1,50.0
+SVM,0,if a ==b:,1,50.0
+SVM,0,else:,1,50.0
+SVM,0,ellif b>a:,1,50.0
+model_name,predicted_score,code,true_score,accuracy
+Dec_Tre,0,import,0,37.5
+Dec_Tre,0,      import,0,37.5
+Dec_Tre,1,import pandas,1,37.5
+Dec_Tre,1,mport numpy,0,37.5
+Dec_Tre,0,import csv,1,37.5
+Dec_Tre,0,if a ==b:,1,37.5
+Dec_Tre,0,else:,1,37.5
+Dec_Tre,0,ellif b>a:,1,37.5
