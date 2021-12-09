@@ -1,1 +1,18 @@
-﻿	I want to build a static codes analyzer that finds syntax errors for Android apps. This analyzer is relatively inexpensive to implement and very useful. For example, a static code analyzer helps security analysts to narrow down on threats or weaknesses detected in the early or final stages of development, before the beginning of the software testing phase. More specifically, static code analysts can be set up to automatically find the exact weakness of codes, such as Apps, classes, and methods. Therefore, analysts allow developers to spend less time to find and fix the errors. This directly saves companies’ assets and improves customer experience. To narrow down the scope of this project, I will focus on building a static code analyzer for Android applications.
+﻿Goal:
+The goal of this project is to build a static codes analyzer that finds syntax errors in python without executing the source codes.
+
+
+Users:
+I want to find syntax errors in my python codes, specifically, 
+
+
+Instruction:
+Copy and paste python codes to a CSV file. Each line of code will be placed in a cell. The program will read the CSV file. It will identify if a line of code contains syntax errors. The program will then calculate the accuracy of the predictive model and the accuracy of the codes.
+
+
+Classifiers:
+1. Logistic Regression
+2. Naive Bayes
+3. KNN
+4. SVM
+5. Decision Tree
