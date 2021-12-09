@@ -1,0 +1,55 @@
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,0,a = 9,1,50.0,10.0
+Log_Reg,0,b = 8,1,50.0,10.0
+Log_Reg,0,c = 7,1,50.0,10.0
+Log_Reg,0,d = 6,1,50.0,10.0
+Log_Reg,0,a= 5,1,50.0,10.0
+Log_Reg,0,b= vc,0,50.0,10.0
+Log_Reg,0,c= wbr,0,50.0,10.0
+Log_Reg,0,z =,0,50.0,10.0
+Log_Reg,0,zrh=,0,50.0,10.0
+Log_Reg,0,j,0,50.0,10.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,0,a = 9,1,50.0,10.0
+Log_Reg,0,b = 8,1,50.0,10.0
+Log_Reg,0,c = 7,1,50.0,10.0
+Log_Reg,0,d = 6,1,50.0,10.0
+Log_Reg,0,a= 5,1,50.0,10.0
+Log_Reg,0,b= vc,0,50.0,10.0
+Log_Reg,0,c= wbr,0,50.0,10.0
+Log_Reg,0,z =,0,50.0,10.0
+Log_Reg,0,zrh=,0,50.0,10.0
+Log_Reg,0,j,0,50.0,10.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,1,a = 9,1,50.0,110.0
+Log_Reg,1,b = 8,1,50.0,110.0
+Log_Reg,1,c = 7,1,50.0,110.0
+Log_Reg,1,d = 6,1,50.0,110.0
+Log_Reg,1,a= 5,1,50.0,110.0
+Log_Reg,1,b= vc,0,50.0,110.0
+Log_Reg,1,c= wbr,0,50.0,110.0
+Log_Reg,1,z =,0,50.0,110.0
+Log_Reg,1,zrh=,0,50.0,110.0
+Log_Reg,1,j,0,50.0,110.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,1,a = 9,1,80.0,80.0
+Log_Reg,1,b = 8,1,80.0,80.0
+Log_Reg,1,c = 7,1,80.0,80.0
+Log_Reg,1,d = 6,1,80.0,80.0
+Log_Reg,1,a= 5,1,80.0,80.0
+Log_Reg,0,b= vc,0,80.0,80.0
+Log_Reg,0,c= wbr,0,80.0,80.0
+Log_Reg,1,z =,0,80.0,80.0
+Log_Reg,0,zrh=,0,80.0,80.0
+Log_Reg,1,j,0,80.0,80.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,1,a = 9,1,50.0,110.0
+Log_Reg,1,b = 8,1,50.0,110.0
+Log_Reg,1,c = 7,1,50.0,110.0
+Log_Reg,1,d = 6,1,50.0,110.0
+Log_Reg,1,a= 5,1,50.0,110.0
+Log_Reg,1,b= vc,0,50.0,110.0
+Log_Reg,1,c= wbr,0,50.0,110.0
+Log_Reg,1,z =,0,50.0,110.0
+Log_Reg,1,zrh=,0,50.0,110.0
+Log_Reg,1,j,0,50.0,110.0

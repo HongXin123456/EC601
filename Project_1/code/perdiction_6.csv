@@ -1,45 +1,60 @@
 model_name,predicted_score,code,true_score,accuracy
-Log_Reg,0,import,0,37.5
-Log_Reg,0,      import,0,37.5
-Log_Reg,1,import pandas,1,37.5
-Log_Reg,1,mport numpy,0,37.5
-Log_Reg,0,import csv,1,37.5
-Log_Reg,0,if a ==b:,1,37.5
-Log_Reg,0,else:,1,37.5
-Log_Reg,0,ellif p>5:,1,37.5
+Log_Reg,0,import,0,45.4545
+Log_Reg,0,      import,0,45.4545
+Log_Reg,1,import pandas,1,45.4545
+Log_Reg,0,mport numpy,0,45.4545
+Log_Reg,0,import csv,1,45.4545
+Log_Reg,0,if a ==b:,1,45.4545
+Log_Reg,0,else:,1,45.4545
+Log_Reg,0,ellif p>5:,1,45.4545
+Log_Reg,0,a = [],1,45.4545
+Log_Reg,0,x = [],1,45.4545
+Log_Reg,0,x_0 =,0,45.4545
 model_name,predicted_score,code,true_score,accuracy
-Nav_Bay,0,import,0,37.5
-Nav_Bay,0,      import,0,37.5
-Nav_Bay,1,import pandas,1,37.5
-Nav_Bay,1,mport numpy,0,37.5
-Nav_Bay,0,import csv,1,37.5
-Nav_Bay,0,if a ==b:,1,37.5
-Nav_Bay,0,else:,1,37.5
-Nav_Bay,0,ellif p>5:,1,37.5
+Nav_Bay,0,import,0,36.3636
+Nav_Bay,0,      import,0,36.3636
+Nav_Bay,1,import pandas,1,36.3636
+Nav_Bay,1,mport numpy,0,36.3636
+Nav_Bay,0,import csv,1,36.3636
+Nav_Bay,0,if a ==b:,1,36.3636
+Nav_Bay,0,else:,1,36.3636
+Nav_Bay,0,ellif p>5:,1,36.3636
+Nav_Bay,0,a = [],1,36.3636
+Nav_Bay,0,x = [],1,36.3636
+Nav_Bay,0,x_0 =,0,36.3636
 model_name,predicted_score,code,true_score,accuracy
-KNN,0,import,0,37.5
-KNN,0,      import,0,37.5
-KNN,1,import pandas,1,37.5
-KNN,1,mport numpy,0,37.5
-KNN,0,import csv,1,37.5
-KNN,0,if a ==b:,1,37.5
-KNN,0,else:,1,37.5
-KNN,0,ellif p>5:,1,37.5
+KNN,0,import,0,81.8182
+KNN,0,      import,0,81.8182
+KNN,1,import pandas,1,81.8182
+KNN,1,mport numpy,0,81.8182
+KNN,1,import csv,1,81.8182
+KNN,1,if a ==b:,1,81.8182
+KNN,1,else:,1,81.8182
+KNN,1,ellif p>5:,1,81.8182
+KNN,1,a = [],1,81.8182
+KNN,1,x = [],1,81.8182
+KNN,1,x_0 =,0,81.8182
 model_name,predicted_score,code,true_score,accuracy
-SVM,0,import,0,75.0
-SVM,0,      import,0,75.0
-SVM,1,import pandas,1,75.0
-SVM,0,mport numpy,0,75.0
-SVM,0,import csv,1,75.0
-SVM,1,if a ==b:,1,75.0
-SVM,1,else:,1,75.0
-SVM,0,ellif p>5:,1,75.0
+SVM,0,import,0,81.8182
+SVM,0,      import,0,81.8182
+SVM,1,import pandas,1,81.8182
+SVM,0,mport numpy,0,81.8182
+SVM,0,import csv,1,81.8182
+SVM,1,if a ==b:,1,81.8182
+SVM,1,else:,1,81.8182
+SVM,0,ellif p>5:,1,81.8182
+SVM,1,a = [],1,81.8182
+SVM,1,x = [],1,81.8182
+SVM,0,x_0 =,0,81.8182
 model_name,predicted_score,code,true_score,accuracy
-Dec_Tre,0,import,0,75.0
-Dec_Tre,0,      import,0,75.0
-Dec_Tre,1,import pandas,1,75.0
-Dec_Tre,1,mport numpy,0,75.0
-Dec_Tre,0,import csv,1,75.0
-Dec_Tre,1,if a ==b:,1,75.0
-Dec_Tre,1,else:,1,75.0
-Dec_Tre,1,ellif p>5:,1,75.0
+Dec_Tre,0,import,0,72.7273
+Dec_Tre,0,      import,0,72.7273
+Dec_Tre,1,import pandas,1,72.7273
+Dec_Tre,1,mport numpy,0,72.7273
+Dec_Tre,0,import csv,1,72.7273
+Dec_Tre,1,if a ==b:,1,72.7273
+Dec_Tre,1,else:,1,72.7273
+Dec_Tre,1,ellif p>5:,1,72.7273
+Dec_Tre,1,a = [],1,72.7273
+Dec_Tre,1,x = [],1,72.7273
+Dec_Tre,1,x_0 =,0,72.7273

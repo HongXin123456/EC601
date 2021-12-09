@@ -1,0 +1,55 @@
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,0,import,0,60.0,60.0
+Log_Reg,0,      import,0,60.0,60.0
+Log_Reg,1,mport numpy,0,60.0,60.0
+Log_Reg,1,port pandas,0,60.0,60.0
+Log_Reg,0,port numpy,0,60.0,60.0
+Log_Reg,0,import numpy,1,60.0,60.0
+Log_Reg,1,import numpy as np,1,60.0,60.0
+Log_Reg,0,import csv,1,60.0,60.0
+Log_Reg,1,import pandas as pd,1,60.0,60.0
+Log_Reg,1,import pandas,1,60.0,60.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,0,import,0,70.0,70.0
+Log_Reg,0,      import,0,70.0,70.0
+Log_Reg,1,mport numpy,0,70.0,70.0
+Log_Reg,1,port pandas,0,70.0,70.0
+Log_Reg,0,port numpy,0,70.0,70.0
+Log_Reg,1,import numpy,1,70.0,70.0
+Log_Reg,1,import numpy as np,1,70.0,70.0
+Log_Reg,0,import csv,1,70.0,70.0
+Log_Reg,1,import pandas as pd,1,70.0,70.0
+Log_Reg,1,import pandas,1,70.0,70.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,0,import,0,90.0,50.0
+Log_Reg,0,      import,0,90.0,50.0
+Log_Reg,0,mport numpy,0,90.0,50.0
+Log_Reg,0,port pandas,0,90.0,50.0
+Log_Reg,0,port numpy,0,90.0,50.0
+Log_Reg,1,import numpy,1,90.0,50.0
+Log_Reg,1,import numpy as np,1,90.0,50.0
+Log_Reg,0,import csv,1,90.0,50.0
+Log_Reg,1,import pandas as pd,1,90.0,50.0
+Log_Reg,1,import pandas,1,90.0,50.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,0,import,0,80.0,40.0
+Log_Reg,0,      import,0,80.0,40.0
+Log_Reg,0,mport numpy,0,80.0,40.0
+Log_Reg,0,port pandas,0,80.0,40.0
+Log_Reg,0,port numpy,0,80.0,40.0
+Log_Reg,0,import numpy,1,80.0,40.0
+Log_Reg,1,import numpy as np,1,80.0,40.0
+Log_Reg,0,import csv,1,80.0,40.0
+Log_Reg,1,import pandas as pd,1,80.0,40.0
+Log_Reg,1,import pandas,1,80.0,40.0
+model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
+Log_Reg,0,import,0,50.0,70.0
+Log_Reg,0,      import,0,50.0,70.0
+Log_Reg,1,mport numpy,0,50.0,70.0
+Log_Reg,1,port pandas,0,50.0,70.0
+Log_Reg,1,port numpy,0,50.0,70.0
+Log_Reg,0,import numpy,1,50.0,70.0
+Log_Reg,1,import numpy as np,1,50.0,70.0
+Log_Reg,0,import csv,1,50.0,70.0
+Log_Reg,1,import pandas as pd,1,50.0,70.0
+Log_Reg,1,import pandas,1,50.0,70.0

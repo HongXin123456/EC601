@@ -7,3 +7,6 @@ predicted_score,Test_x,Test_y
 ,if a ==b:,1
 ,else:,1
 ,ellif p>5:,1
+,a = [],1
+,x = [],1
+,x_0 =,0

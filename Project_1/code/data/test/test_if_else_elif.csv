@@ -1,0 +1,11 @@
+predicted_score,Test_x,Test_y
+,if a < c:,1
+,if 9 > a:,1
+,else:,1
+,elif b>5:,1
+,elif p<9:,1
+,if c =,0
+,if a = b,0
+,else,0
+,elif b<,0
+,eli,0
