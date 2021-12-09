@@ -1,55 +1,55 @@
 model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
-Log_Reg,0,if a < c:,1,50.0,0.0
-Log_Reg,0,if 9 > a:,1,50.0,0.0
-Log_Reg,0,else:,1,50.0,0.0
-Log_Reg,0,elif b>5:,1,50.0,0.0
-Log_Reg,0,elif p<9:,1,50.0,0.0
-Log_Reg,0,if c =,0,50.0,0.0
-Log_Reg,0,if a = b,0,50.0,0.0
-Log_Reg,0,else,0,50.0,0.0
-Log_Reg,0,elif b<,0,50.0,0.0
-Log_Reg,0,eli,0,50.0,0.0
+Log_Reg,0,if a == c:,1,60.0,30.0
+Log_Reg,0,if 4>1:,1,60.0,30.0
+Log_Reg,0,else:,1,60.0,30.0
+Log_Reg,1,elif b<6:,1,60.0,30.0
+Log_Reg,1,elif d<8:,1,60.0,30.0
+Log_Reg,0,if c =,0,60.0,30.0
+Log_Reg,0,if a = b,0,60.0,30.0
+Log_Reg,0,else,0,60.0,30.0
+Log_Reg,1,elif b<,0,60.0,30.0
+Log_Reg,0,eli,0,60.0,30.0
 model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
-Nav_Bay,0,if a < c:,1,50.0,0.0
-Nav_Bay,0,if 9 > a:,1,50.0,0.0
-Nav_Bay,0,else:,1,50.0,0.0
-Nav_Bay,0,elif b>5:,1,50.0,0.0
-Nav_Bay,0,elif p<9:,1,50.0,0.0
-Nav_Bay,0,if c =,0,50.0,0.0
-Nav_Bay,0,if a = b,0,50.0,0.0
-Nav_Bay,0,else,0,50.0,0.0
-Nav_Bay,0,elif b<,0,50.0,0.0
-Nav_Bay,0,eli,0,50.0,0.0
+Nav_Bay,0,if a == c:,1,60.0,30.0
+Nav_Bay,0,if 4>1:,1,60.0,30.0
+Nav_Bay,0,else:,1,60.0,30.0
+Nav_Bay,1,elif b<6:,1,60.0,30.0
+Nav_Bay,1,elif d<8:,1,60.0,30.0
+Nav_Bay,0,if c =,0,60.0,30.0
+Nav_Bay,0,if a = b,0,60.0,30.0
+Nav_Bay,0,else,0,60.0,30.0
+Nav_Bay,1,elif b<,0,60.0,30.0
+Nav_Bay,0,eli,0,60.0,30.0
 model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
-KNN,1,if a < c:,1,40.0,70.0
-KNN,1,if 9 > a:,1,40.0,70.0
+KNN,1,if a == c:,1,40.0,70.0
+KNN,1,if 4>1:,1,40.0,70.0
 KNN,1,else:,1,40.0,70.0
-KNN,0,elif b>5:,1,40.0,70.0
-KNN,0,elif p<9:,1,40.0,70.0
+KNN,0,elif b<6:,1,40.0,70.0
+KNN,0,elif d<8:,1,40.0,70.0
 KNN,1,if c =,0,40.0,70.0
 KNN,1,if a = b,0,40.0,70.0
 KNN,1,else,0,40.0,70.0
 KNN,0,elif b<,0,40.0,70.0
 KNN,1,eli,0,40.0,70.0
 model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
-SVM,0,if a < c:,1,50.0,0.0
-SVM,0,if 9 > a:,1,50.0,0.0
-SVM,0,else:,1,50.0,0.0
-SVM,0,elif b>5:,1,50.0,0.0
-SVM,0,elif p<9:,1,50.0,0.0
-SVM,0,if c =,0,50.0,0.0
-SVM,0,if a = b,0,50.0,0.0
-SVM,0,else,0,50.0,0.0
-SVM,0,elif b<,0,50.0,0.0
-SVM,0,eli,0,50.0,0.0
+SVM,1,if a == c:,1,50.0,60.0
+SVM,1,if 4>1:,1,50.0,60.0
+SVM,1,else:,1,50.0,60.0
+SVM,0,elif b<6:,1,50.0,60.0
+SVM,0,elif d<8:,1,50.0,60.0
+SVM,1,if c =,0,50.0,60.0
+SVM,1,if a = b,0,50.0,60.0
+SVM,1,else,0,50.0,60.0
+SVM,0,elif b<,0,50.0,60.0
+SVM,0,eli,0,50.0,60.0
 model_name,predicted_score,code,true_score,accuracy fo model(%),accuracy of codes(%)
-Dec_Tre,0,if a < c:,1,50.0,0.0
-Dec_Tre,0,if 9 > a:,1,50.0,0.0
-Dec_Tre,0,else:,1,50.0,0.0
-Dec_Tre,0,elif b>5:,1,50.0,0.0
-Dec_Tre,0,elif p<9:,1,50.0,0.0
-Dec_Tre,0,if c =,0,50.0,0.0
-Dec_Tre,0,if a = b,0,50.0,0.0
-Dec_Tre,0,else,0,50.0,0.0
-Dec_Tre,0,elif b<,0,50.0,0.0
-Dec_Tre,0,eli,0,50.0,0.0
+Dec_Tre,1,if a == c:,1,50.0,60.0
+Dec_Tre,1,if 4>1:,1,50.0,60.0
+Dec_Tre,1,else:,1,50.0,60.0
+Dec_Tre,0,elif b<6:,1,50.0,60.0
+Dec_Tre,0,elif d<8:,1,50.0,60.0
+Dec_Tre,1,if c =,0,50.0,60.0
+Dec_Tre,1,if a = b,0,50.0,60.0
+Dec_Tre,1,else,0,50.0,60.0
+Dec_Tre,0,elif b<,0,50.0,60.0
+Dec_Tre,0,eli,0,50.0,60.0
